@@ -118,16 +118,16 @@ services:
       - kafka-schema-registry
       - kafka-rest-proxy
 
-  kafka-connect-ui:
-    image: landoop/kafka-connect-ui:0.9.4
-    hostname: kafka-connect-ui
-    ports:
-      - "8003:8000"
-    environment:
-      CONNECT_URL: "http://kafka-connect:8083/"
-      PROXY: "true"
-    depends_on:
-      - kafka-connect
+#  kafka-connect-ui:
+#    image: landoop/kafka-connect-ui:0.9.4
+#    hostname: kafka-connect-ui
+#    ports:
+#      - "8003:8000"
+#    environment:
+#      CONNECT_URL: "http://kafka-connect:8083/"
+#      PROXY: "true"
+#    depends_on:
+#      - kafka-connect
 
 #  zoonavigator-web:
 #    image: elkozmon/zoonavigator-web:0.4.0
@@ -151,7 +151,7 @@ services:
   kafka_manager:
     image: hlebalbau/kafka-manager:stable
     ports:
-      - "9000:9090"
+      - "19000:9000"
     environment:
       ZK_HOSTS: "zoo1:2181"
       APPLICATION_SECRET: "random-secret"
